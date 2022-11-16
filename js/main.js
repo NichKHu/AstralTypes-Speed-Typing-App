@@ -16,13 +16,9 @@ function randomWord() {
 }
 
 function formatWord(word) {
-    return `<div class="word"> 
-    <span class="letter">
-        ${word.split('').join('</span><span class="letter">')} 
-        </span>
-    </div>`; 
-    // Puts each words into div elements - 11
-    // Split words into letters and put them inside span elements - 14
+    return `<div class="word"><span class="letter">${word.split('').join('</span><span class="letter">')}</span></div>`; 
+    // Puts each words into div elements 
+    // Split words into letters and put them inside span elements 
 }
 
 function newGame() {
@@ -31,11 +27,14 @@ function newGame() {
         document.getElementById('words').innerHTML += formatWord(randomWord()); 
     }
     addClass(document.querySelector('.word'), 'current'); // Adding class current to each word
-    addClass(document.querySelector('.letter'), 'current'); //Adding class current to first letter
+    addClass(document.querySelector('.letter'), 'current'); // Adding class current to first letter
 }
 
 document.getElementById('game').addEventListener('keyup', ev => { // Records user key presses
-    const key = ev.key; //
+    const key = ev.key; 
+    const currentLetter = document.querySelector('.letter.current');
+    const expected = currentLetter.innerHTML; 
+    console.log({key,expected});
 })
 
 newGame();
