@@ -7,7 +7,7 @@ function randomWord() {
 }
 
 function formatWord(word) {
-    return `<div class="word">${word}</div>`; //put each words in a div element
+    return `<div class="word"><span class="letter">${word.split('').join('</span><span class="letter">')}</span></div>`; //put each words in a div element and each letter in a span element
 }
 
 function newGame() {

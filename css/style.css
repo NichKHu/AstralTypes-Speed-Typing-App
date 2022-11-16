@@ -36,6 +36,7 @@ h1 svg {
 #header {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  margin: 20px 6px 30px;
 }
 
 #buttons {
