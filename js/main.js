@@ -34,7 +34,7 @@ document.getElementById('game').addEventListener('keyup', ev => { // Records use
     const key = ev.key; 
     const currentWord = document.querySelector('.word.current');
     const currentLetter = document.querySelector('.letter.current');
-    const expected = currentLetter.innerHTML; 
+    const expected = currentLetter?.innerHTML || ' '; // Using optional chaining, if we don't have currentLetter in our innerHTML, we get empty space as default
     const isLetter = key.length === 1 && key !== ' '; // Key values for letter are 1, whereas 'Shift' and 'Backspace' are numerous  
     const isSpace = key === ' ';
 
@@ -43,7 +43,9 @@ document.getElementById('game').addEventListener('keyup', ev => { // Records use
             addClass(currentLetter, key === expected ? 'correct' : 'incorrect'); 
             // Moving current class to the next letter
             removeClass(currentLetter, 'current');
-            addClass(currentLetter.nextSibling, 'current');
+            if (currentLetter.nextSibling) {
+                addClass(currentLetter.nextSibling, 'current');
+            }
         }
     }
 
