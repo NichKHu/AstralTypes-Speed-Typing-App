@@ -60,6 +60,27 @@ div#game {
   line-height: 35px;
   height: 105px;
   overflow: hidden;
+  position: relative;
+}
+
+#words {
+  filter: blur(5px);
+}
+
+#game:focus #words {
+  filter: blur(0);
+}
+
+#focus-error {
+  position: absolute;
+  inset: 0;
+  text-align: center;
+  padding-top: 35px;
+  font-weight: 200;
+}
+
+#game:focus #focus-error {
+  display: none;
 }
 
 div.word {

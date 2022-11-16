@@ -6,8 +6,14 @@ function randomWord() {
     return words[randomIndex];
 }
 
+// Puts each words into div elements - 11
+// Split words into letters and put them inside span elements - 14
 function formatWord(word) {
-    return `<div class="word"><span class="letter">${word.split('').join('</span><span class="letter">')}</span></div>`; //put each words in a div element and each letter in a span element
+    return `<div class="word"> 
+    <span class="letter">
+        ${word.split('').join('</span><span class="letter">')} 
+        </span>
+    </div>`; 
 }
 
 function newGame() {
