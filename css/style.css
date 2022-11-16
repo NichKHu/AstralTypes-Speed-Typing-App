@@ -54,3 +54,15 @@ button {
   border-radius: 5px;
   cursor: pointer;
 }
+
+div#game {
+  line-height: 35px;
+  height: 105px;
+  overflow: hidden;
+}
+
+div.word {
+  display: inline-block;
+  font-family: 'Roboto Mono', monospace;
+  margin: 0 5px;
+}
