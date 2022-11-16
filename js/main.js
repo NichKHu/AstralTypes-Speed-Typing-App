@@ -12,7 +12,7 @@ function removeClass(el, name) {
 
 function randomWord() {
     const randomIndex = Math.ceil(Math.random() * wordsCount);
-    return words[randomIndex];
+    return words[randomIndex - 1]; // -1 is due to getting 0 as first element of our array
 }
 
 function formatWord(word) {
@@ -34,7 +34,13 @@ document.getElementById('game').addEventListener('keyup', ev => { // Records use
     const key = ev.key; 
     const currentLetter = document.querySelector('.letter.current');
     const expected = currentLetter.innerHTML; 
-    console.log({key,expected});
+    const isLetter = key.length === 1 && key !== ' '; // Key values for letter are 1, whereas 'Shift' and 'Backspace' are numerous 
+
+    if (isLetter) {
+        if (currentLetter) {
+            addClass(currentLetter, key === expected ? 'correct' : 'incorrect');
+        }
+    }
 })
 
 newGame();
