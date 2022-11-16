@@ -32,14 +32,39 @@ function newGame() {
 
 document.getElementById('game').addEventListener('keyup', ev => { // Records user key presses
     const key = ev.key; 
+    const currentWord = document.querySelector('.word.current');
     const currentLetter = document.querySelector('.letter.current');
     const expected = currentLetter.innerHTML; 
-    const isLetter = key.length === 1 && key !== ' '; // Key values for letter are 1, whereas 'Shift' and 'Backspace' are numerous 
+    const isLetter = key.length === 1 && key !== ' '; // Key values for letter are 1, whereas 'Shift' and 'Backspace' are numerous  
+    const isSpace = key === ' ';
 
     if (isLetter) {
         if (currentLetter) {
-            addClass(currentLetter, key === expected ? 'correct' : 'incorrect');
+            addClass(currentLetter, key === expected ? 'correct' : 'incorrect'); 
+            // Moving current class to the next letter
+            removeClass(currentLetter, 'current');
+            addClass(currentLetter.nextSibling, 'current');
         }
+    }
+
+    if (isSpace) {
+        if (expected !== ' ') {  
+            const lettersToInvalidate = [...document.querySelectorAll('.word.current .letter:not(.correct)')];
+            // We are selecting all letters in class "word current" that are not correct
+            // Using a spread operator to make an array instead of object, to allow for looping
+            lettersToInvalidate.forEach(letter => {
+                addClass(letter, 'incorrect');
+                // Invalidates all letters in word if space is typed in beginning of word
+                // Invalidates remaining letters in word if space is typed in middle of word 
+            });
+        }
+        removeClass(currentWord, 'current');
+        addClass(currentWord.nextSibling, 'current');
+        // Current class jumps to next word 
+        if (currentLetter) {
+            removeClass(currentLetter, 'current');
+        }
+        addClass(currentWord.nextSibling.firstChild, 'current'); //Current class jumps to next word's first letter
     }
 })
 
