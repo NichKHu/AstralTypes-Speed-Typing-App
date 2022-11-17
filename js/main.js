@@ -46,6 +46,11 @@ document.getElementById('game').addEventListener('keyup', ev => { // Records use
             if (currentLetter.nextSibling) {
                 addClass(currentLetter.nextSibling, 'current');
             }
+        } else {
+            const incorrectLetter = document.createElement('span');
+            incorrectLetter.innerHTML = key;
+            incorrectLetter.className = 'letter incorrect extra' // For extra incorrect letters at the end 
+            currentWord.appendChild(incorrectLetter);
         }
     }
 
