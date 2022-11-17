@@ -37,6 +37,8 @@ document.getElementById('game').addEventListener('keyup', ev => { // Records use
     const expected = currentLetter?.innerHTML || ' '; // Using optional chaining, if we don't have currentLetter in our innerHTML, we get empty space as default
     const isLetter = key.length === 1 && key !== ' '; // Key values for letter are 1, whereas 'Shift' and 'Backspace' are numerous  
     const isSpace = key === ' ';
+    const isBackspace = key === 'Backspace';
+    const isFirstLetter = currentLetter === currentWord.firstChild;
 
     if (isLetter) {
         if (currentLetter) {
@@ -74,6 +76,19 @@ document.getElementById('game').addEventListener('keyup', ev => { // Records use
         addClass(currentWord.nextSibling.firstChild, 'current'); //Current class jumps to next word's first letter
     }
 
+    if (isBackspace) {
+        if(currentLetter && isFirstLetter) {
+            // Make previous word current, last letter current
+            removeClass(currentWord, 'current');
+            addClass(currentWord.previousSibling, 'current');
+            removeClass(currentLetter, 'current');
+            addClass(currentWord.previousSibling.lastChild, 'current');
+            removeClass(currentWord.previousSibling.lastChild, 'incorrect');
+            removeClass(currentWord.previousSibling.lastChild, 'correct');
+        }
+
+    
+    }
 
 
     // Move cursor
@@ -90,3 +105,10 @@ document.getElementById('game').addEventListener('keyup', ev => { // Records use
 })
 
 newGame();
+
+// Keybinds For Users 
+window.addEventListener('keydown', (event) => {
+    if (event.key === 'Tab') {
+        newGame()
+    }
+})
