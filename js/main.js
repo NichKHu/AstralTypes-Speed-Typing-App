@@ -73,6 +73,20 @@ document.getElementById('game').addEventListener('keyup', ev => { // Records use
         }
         addClass(currentWord.nextSibling.firstChild, 'current'); //Current class jumps to next word's first letter
     }
+
+
+
+    // Move cursor
+    const nextLetter = document.querySelector('.letter.current');
+    const nextWord = document.querySelector('.word.current');
+    const cursor = document.getElementById('cursor');
+    if (nextLetter) {
+        cursor.style.top = nextLetter.getBoundingClientRect().top + 2 + 'px';
+        cursor.style.left = nextLetter.getBoundingClientRect().left + 'px';
+    } else { // If last letter, cursor goes at the end 
+        cursor.style.top = nextWord.getBoundingClientRect().top + 2 + 'px';
+        cursor.style.left = nextWord.getBoundingClientRect().right + 'px';
+    }
 })
 
 newGame();
