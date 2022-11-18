@@ -101,6 +101,12 @@ document.getElementById('game').addEventListener('keyup', ev => { // Records use
         }
     }
 
+    // Move lines by scrolling up 
+    if (currentWord.getBoundingClientRect().top > 250) {
+        const words = document.getElementById('words');
+        const margin = parseInt(words.style.marginTop || '0px');
+        words.style.marginTop = (margin - 35) + 'px';
+    }
 
     // Move cursor
     const nextLetter = document.querySelector('.letter.current');
