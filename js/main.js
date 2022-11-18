@@ -53,7 +53,8 @@ document.getElementById('game').addEventListener('keyup', ev => { // Records use
             const currentTime = (new Date()).getTime();
             const msPassed = currentTime - window.gameStart;
             const secondsPassed = Math.round(msPassed / 1000);
-            document.getElementById('info').innerHTML = secondsPassed + '';
+            const secondsLeft = (gameTime / 1000) - secondsPassed;
+            document.getElementById('info').innerHTML = secondsLeft + '';
 
         }, 1000);
     }
