@@ -73,7 +73,7 @@ document.getElementById('game').addEventListener('keyup', ev => { // Records use
         if (currentLetter) {
             removeClass(currentLetter, 'current');
         }
-        addClass(currentWord.nextSibling.firstChild, 'current'); //Current class jumps to next word's first letter
+        addClass(currentWord.nextSibling.firstChild, 'current'); // Current class jumps to next word's first letter
     }
 
     if (isBackspace) {
@@ -86,8 +86,19 @@ document.getElementById('game').addEventListener('keyup', ev => { // Records use
             removeClass(currentWord.previousSibling.lastChild, 'incorrect');
             removeClass(currentWord.previousSibling.lastChild, 'correct');
         }
-
-    
+        if(currentLetter && !isFirstLetter) {
+            // Move back one letter, invalidate letter
+            removeClass(currentLetter, 'current');
+            addClass(currentLetter.previousSibling, 'current')
+            removeClass(currentLetter.previousSibling, 'incorrect');
+            removeClass(currentLetter.previousSibling, 'correct');
+        }
+        if (!currentLetter) {
+            // Move back one letter when all letters in the word are typed
+            addClass(currentWord.lastChild, 'current');
+            removeClass(currentWord.lastChild, 'incorrect');
+            removeClass(currentWord.lastChild, 'correct');
+        }
     }
 
 

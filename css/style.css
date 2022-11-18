@@ -47,16 +47,22 @@ h1 svg {
 
 #info {
   color: var(--primaryColor);
+  font-family: 'Raleway', 'sans-serif';
+  font-weight: 300;
 }
 
 button {
   font-size: 0.7rem;
   background: rgba(255,255,255,.2);
   border: 0;
-  color: rgba(255,255,255,.5);
   padding: 5px 20px;
   border-radius: 5px;
   cursor: pointer;
+
+  color: rgb(247, 200, 200);
+  font-size: 0.7rem;
+  font-family: 'Raleway', 'sans-serif';
+  font-weight: 200;
 }
 
 div#game {
@@ -64,6 +70,8 @@ div#game {
   height: 105px;
   overflow: hidden;
   position: relative;
+
+  font-size: 1rem;
 }
 
 div#game:focus {
@@ -84,6 +92,9 @@ div#game:focus {
   inset: 0;
   text-align: center;
   padding-top: 35px;
+  color: rgb(247, 200, 200);
+  font-size: 1.2rem;
+  font-family: 'Raleway', 'sans-serif';
   font-weight: 200;
 }
 
@@ -98,7 +109,7 @@ div.word {
 }
 
 .letter.correct {
-  color: #fff;
+  color: rgb(247, 200, 200);
 }
 
 .letter.incorrect {
