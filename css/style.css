@@ -126,7 +126,7 @@ div.word {
   position: fixed;
   top: 195px;
   left: 87px;
-  animation: blink 0.8s infinite;
+  animation: blink 1s infinite;
 }
 
 #game:focus #cursor {
@@ -157,4 +157,19 @@ div.word {
 
 #game.over #focus-error {
   display: none;
+}
+
+#notification {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  right: 1.2rem;
+  width: 100%;
+  height: 2rem;
+
+  color: var(--primaryColor);
+  font-family: 'Raleway', 'sans-serif';
+  font-weight: 200;
+  font-size: 1.2rem;
 }

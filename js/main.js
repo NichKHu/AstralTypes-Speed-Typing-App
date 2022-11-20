@@ -59,7 +59,7 @@ function gameOver() {
 
 }
 
-document.getElementById('game').addEventListener('keyup', ev => { // Records user key presses
+document.getElementById('game').addEventListener('keydown', ev => { // Records user key presses
     const key = ev.key; 
     const currentWord = document.querySelector('.word.current');
     const currentLetter = document.querySelector('.letter.current');
@@ -68,6 +68,21 @@ document.getElementById('game').addEventListener('keyup', ev => { // Records use
     const isSpace = key === ' ';
     const isBackspace = key === 'Backspace';
     const isFirstLetter = currentLetter === currentWord.firstChild;
+    const isCapsLock = key === 'CapsLock';
+
+    console.log ({ev, key})
+
+    if (isCapsLock) { // Set state for capslock
+        const capsLockState = getModifierState('CapsLock');
+
+        if (capsLockState = true) {
+            return document.getElementById('notification').innerHTML = 'Caps Lock is On!';
+        }
+
+        if (capsLockState = false) {
+            return document.getElementById('notification').innerHTML = '';
+        } 
+    } 
 
     if (document.querySelector('#game.over')) {
         return; // Returns nothing to stop the script
