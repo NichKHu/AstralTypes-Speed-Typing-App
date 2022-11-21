@@ -4,12 +4,14 @@
   --bgColor: #333;
   --textPrimary: #fff;
   --textSecondary: #666;
-  --primaryColor: rgb(202, 144, 72);
+  --primaryColor: rgb(181, 127, 60);
+  /* --primaryColor: rgb(202, 144, 72); */
 }
 
 
-*{
+* {
   box-sizing: border-box;
+  list-style-type: none;
 }
 
 body {
@@ -20,8 +22,38 @@ body {
 }
 
 main {
-  width: 600px;
+  width: 55rem;
   margin: 50px auto;
+}
+
+container {
+  display: flex;;
+  align-items: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+nav ul {
+  width: 38rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+nav ul li {
+  padding: 0.4rem;
+}
+
+nav ul li svg {
+  width: 15px;
+  fill: var(--primaryColor);
+  opacity: 60%;
+}
+
+nav ul li svg:hover {
+  fill: var(--primaryColor);
+  opacity: 100%;
+  cursor: pointer;
 }
 
 h1 {

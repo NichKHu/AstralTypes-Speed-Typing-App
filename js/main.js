@@ -191,5 +191,6 @@ newGame();
 window.addEventListener('keydown', (event) => {
     if (event.key === 'Tab') {
         newGame()
+        document.getElementById('game').style.add
     }
 })
