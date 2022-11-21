@@ -3,7 +3,7 @@ const wordsCount = words.length;
 const gameTime = 10 * 1000;
 window.timer = null;
 window.gameStart = null;
-
+window.pauseTime = 0;
 
 function addClass(el, name) {
     el.className += ' '+name;
@@ -39,7 +39,7 @@ function newGame() {
 
 function getWpm() {
     const words = [...document.querySelectorAll('.word')];
-    const lastTypedWord = document.querySelector('word.current');
+    const lastTypedWord = document.querySelector('.word.current');
     const lastTypedWordIndex = words.indexOf(lastTypedWord) + 1;
     const typedWords = words.slice(0, lastTypedWordIndex);
     const correctWords = typedWords.filter(word => {
@@ -76,7 +76,7 @@ document.getElementById('game').addEventListener('keydown', ev => { // Records u
         const capsLockState = ev.getModifierState('CapsLock');
 
         if (capsLockState) {
-            return document.getElementById('notification').innerHTML = 'Caps Lock is On (!)';
+            return document.getElementById('notification').innerHTML = '(!) Caps Lock On';
         } else {
             return document.getElementById('notification').innerHTML = '';
         } 
