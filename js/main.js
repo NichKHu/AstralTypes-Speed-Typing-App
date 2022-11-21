@@ -72,14 +72,12 @@ document.getElementById('game').addEventListener('keydown', ev => { // Records u
 
     console.log ({ev, key})
 
-    if (isCapsLock) { // Set state for capslock
-        const capsLockState = getModifierState('CapsLock');
+    if (isCapsLock) {
+        const capsLockState = ev.getModifierState('CapsLock');
 
-        if (capsLockState = true) {
-            return document.getElementById('notification').innerHTML = 'Caps Lock is On!';
-        }
-
-        if (capsLockState = false) {
+        if (capsLockState) {
+            return document.getElementById('notification').innerHTML = 'Caps Lock is On (!)';
+        } else {
             return document.getElementById('notification').innerHTML = '';
         } 
     } 
