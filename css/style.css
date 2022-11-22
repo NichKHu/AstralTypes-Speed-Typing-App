@@ -26,6 +26,8 @@ main {
   margin: 50px auto;
 }
 
+/* Logo and Navbar *********************************************************************/
+
 container {
   display: flex;;
   align-items: center;
@@ -67,6 +69,38 @@ h1 svg {
   fill: var(--primaryColor);
 }
 
+/* Control Center **********************************************************************/
+
+.control-center {
+  margin-left: 7rem;
+  width: 40rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;  
+
+  background: rgb(44,46,49);
+  border-radius: 0.5rem;
+}
+
+.control-center div {
+  display: flex;
+  padding: 0.5rem;
+
+  font-family: 'Raleway', 'sans-serif';
+  font-size: 0.8rem;
+  color: var(--primaryColor);
+
+  cursor: pointer;
+}
+
+.control-center .modes div svg {
+  width: 20px;
+  fill: var(--primaryColor);
+  opacity: 50%;
+}
+
+/* Header ******************************************************************************/
+
 #header {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -96,6 +130,10 @@ button {
   font-family: 'Raleway', 'sans-serif';
   font-weight: 200;
 }
+
+
+/* Game **********************************************************************************/
+
 
 div#game {
   line-height: 35px;

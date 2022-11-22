@@ -55,7 +55,7 @@ function gameOver() {
     clearInterval(window.timer);
     addClass(document.getElementById('game'), 'over');
     const result = getWpm();
-    document.getElementById('info').innerHTML = `WPM = ${result}`;
+    document.getElementById('info').innerHTML = `Words Per Minute (WPM) = ${result}`;
 
 }
 
