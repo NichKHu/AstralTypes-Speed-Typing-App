@@ -72,8 +72,8 @@ h1 svg {
 /* Control Center **********************************************************************/
 
 .control-center {
-  margin-left: 7rem;
-  width: 40rem;
+  margin-left: 5rem;
+  width: 46rem;
   display: flex;
   justify-content: space-between;
   align-items: center;  
@@ -94,9 +94,25 @@ h1 svg {
 }
 
 .control-center .modes div svg {
-  width: 20px;
+  width: 12px;
   fill: var(--primaryColor);
   opacity: 50%;
+  margin-right: 8px;
+  
+  cursor: pointer;
+}
+
+.control-center .modes div:hover svg {
+  opacity: 100%;
+}
+
+.choose-time:hover {
+  opacity: 100%;
+}
+
+.modes {
+  border-right: 3px solid rgb(112, 98, 98);
+  border-left: 3px solid rgb(112, 98, 98);
 }
 
 /* Header ******************************************************************************/
@@ -194,7 +210,7 @@ div.word {
   height: 1.4rem;
   background: var(--primaryColor);
   position: fixed;
-  top: 195px;
+  top: 220px;
   left: 87px;
   animation: blink 1s infinite;
 }
