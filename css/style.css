@@ -210,8 +210,8 @@ div.word {
   height: 1.4rem;
   background: var(--primaryColor);
   position: fixed;
-  top: 220px;
-  left: 87px;
+  top: 290px;
+  left: 158px;
   animation: blink 1s infinite;
 }
 

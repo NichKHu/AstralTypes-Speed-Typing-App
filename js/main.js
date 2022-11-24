@@ -166,7 +166,7 @@ document.getElementById('game').addEventListener('keydown', ev => { // Records u
     }
 
     // Move lines by scrolling up 
-    if (currentWord.getBoundingClientRect().top > 250) {
+    if (currentWord.getBoundingClientRect().top > 300) {
         const words = document.getElementById('words');
         const margin = parseInt(words.style.marginTop || '0px');
         words.style.marginTop = (margin - 35) + 'px';
