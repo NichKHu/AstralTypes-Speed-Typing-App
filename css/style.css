@@ -259,3 +259,27 @@ div.word {
   font-weight: 200;
   font-size: 1.2rem;
 }
+
+/* Footer ***************/
+
+.footer {
+  margin-top: 25rem;
+}
+
+.misc {
+  display: flex;
+}
+
+.misc div {
+  color: var(--primaryColor);
+  font-size: 0.7rem;
+  font-family: 'Raleway', 'sans-serif';
+  padding: 0.5rem;
+}
+
+.copyright-info {
+  color: var(--primaryColor);
+  font-size: 0.7rem;
+  font-family: 'Raleway', 'sans-serif';
+  padding: 0.5rem;
+}
