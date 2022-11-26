@@ -94,10 +94,10 @@ h1 svg {
 }
 
 .control-center .modes div svg {
-  width: 12px;
+  width: 17px;
   fill: var(--primaryColor);
   opacity: 50%;
-  margin-right: 8px;
+  padding-right: 8px;
   
   cursor: pointer;
 }
@@ -263,7 +263,7 @@ div.word {
 /* Footer ***************/
 
 .footer {
-  margin-top: 25rem;
+  margin-top: 15rem;
 }
 
 .misc {
@@ -275,11 +275,32 @@ div.word {
   font-size: 0.7rem;
   font-family: 'Raleway', 'sans-serif';
   padding: 0.5rem;
+  cursor: pointer;
+  opacity: 70%;
 }
+
+.misc div:hover,
+.misc div svg:hover {
+  opacity: 100%;
+}
+
+.misc div svg {
+  width: 1rem;
+  padding-right: 4px;
+  fill: var(--primaryColor);
+  opacity: 70%;
+  
+
+  cursor: pointer;
+}
+
 
 .copyright-info {
   color: var(--primaryColor);
   font-size: 0.7rem;
   font-family: 'Raleway', 'sans-serif';
   padding: 0.5rem;
+  opacity: 70%;
+
+  cursor: pointer;
 }
